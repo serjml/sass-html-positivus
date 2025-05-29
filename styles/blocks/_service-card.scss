@@ -11,6 +11,12 @@
   border-radius: var(--border-radius-large);
   box-shadow: var(--shadow);
 
+  @include mobile {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 27px;
+  }
+
   &--accent-bg {
     background-color: var(--color-accent);
   }
@@ -25,16 +31,33 @@
     justify-content: space-between;
     align-items: start;
     row-gap: 30px;
+
+    @include mobile {
+      display: contents;
+    }
   }
 
   &__image {
     align-self: center;
+
+    @include desktop {
+      max-width: 50%;
+      height: auto;
+    }
+
+    @include mobile {
+      max-width: 165px;
+    }
   }
 
   &__title {
     display: flex;
     flex-direction: column;
     align-items: start;
+
+    @include mobile {
+      grid-column: -1 / 1;
+    }
   }
 
   &__link {
@@ -49,21 +72,31 @@
       opacity: 0.7;
     }
 
+    @include mobile {
+      align-self: end;
+    }
+
     &--light {
       color: var(--color-light);
       --serviceCardLinkIconColor: var(--color-dark);
     }
-  }
 
-  &__link-icon-wrapper {
-    @include flex-center;
-    @include square(41px);
+    &-icon-wrapper {
+      @include flex-center;
+      @include square(41px);
 
-    background-color: currentColor;
-    border-radius: 50%;
+      background-color: currentColor;
+      border-radius: 50%;
 
-    svg {
-      color: var(--serviceCardLinkIconColor);
+      svg {
+        color: var(--serviceCardLinkIconColor);
+      }
+    }
+
+    &-label {
+      @include mobile {
+        @include visually-hidden;
+      }
     }
   }
 }
