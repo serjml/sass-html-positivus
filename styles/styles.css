@@ -905,18 +905,42 @@ h4 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+@media (max-width: 767px) {
+  .studies__list {
+    overflow-x: scroll;
+    width: 100vw;
+    column-gap: 20px;
+  }
+}
 .studies__item {
   --studiesItemPaddingX: 64px;
   display: flex;
   flex-direction: column;
   row-gap: 20px;
 }
-.studies__item:not(:first-child) {
-  padding-left: var(--studiesItemPaddingX);
+@media (max-width: 1280px) {
+  .studies__item {
+    --studiesItemPaddingX: 32px;
+  }
 }
-.studies__item:not(:last-child) {
-  padding-right: var(--studiesItemPaddingX);
-  border-right: 1px solid var(--color-light);
+@media (min-width: 768px) {
+  .studies__item:not(:first-child) {
+    padding-left: var(--studiesItemPaddingX);
+  }
+  .studies__item:not(:last-child) {
+    padding-right: var(--studiesItemPaddingX);
+    border-right: 1px solid var(--color-light);
+  }
+}
+@media (max-width: 767px) {
+  .studies__item {
+    min-width: 350px;
+    padding: 42px 50px;
+    color: var(--color-light);
+    background-color: var(--color-dark);
+    border-radius: var(--border-radius-large);
+    scroll-snap-align: start;
+  }
 }
 .studies__link {
   display: inline-flex;
