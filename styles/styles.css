@@ -1197,6 +1197,7 @@ h4,
   color: var(--color-light);
   background-color: var(--color-dark);
   border-radius: var(--border-radius-large);
+  overflow-x: hidden;
 }
 .reviews__slider {
   --reviewsSliderSlideWidth: 606px;
