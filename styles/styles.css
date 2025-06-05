@@ -1563,9 +1563,9 @@ h4,
   .subscribe-form {
     flex-direction: column;
     row-gap: 22px;
-    padding: 30px;
     width: 100%;
     max-width: 450px;
+    padding: 30px;
   }
 }
 
